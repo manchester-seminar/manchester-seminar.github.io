@@ -10,7 +10,6 @@
       --text: #222;
       --muted: #555;
       --border: #d8d8d8;
-      --light: #f7f7f7;
       --lighter: #fbfbfb;
       --link: #0645ad;
     }
@@ -85,14 +84,6 @@
       white-space: nowrap;
     }
 
-    .notice {
-      padding: 16px 18px;
-      background: var(--light);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      margin-top: 18px;
-    }
-
     .talk {
       padding: 22px 24px;
       margin-top: 24px;
@@ -145,38 +136,19 @@
       A seminar series at the interface of mathematics, physics, and computer science, with an emphasis on cryptography and security, including information security, verifiable security, quantum information, and post-quantum cryptography, spanning theoretical foundations and practical applications.
     </p>
 
+    <p>
+      Talks are usually held in person on Thursdays, 3–4 pm, in Kilburn 2.19.
+      Registration is free via
+      <a href="https://forms.office.com/e/7VSqpt3QXy">this form</a>.
+    </p>
+
     <nav class="nav">
-      <a href="#about">About</a>
-      <a href="#registration">Registration</a>
       <a href="#talks">Talks</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
 
   <main>
-    <section id="about">
-      <h2>About</h2>
-
-      <p>
-        The seminar brings together researchers working across mathematics, physics, computer science, and related areas. It aims to provide a friendly forum for sharing ideas, presenting ongoing work, and encouraging discussion across disciplinary boundaries.
-      </p>
-
-      <p>
-        Unless otherwise stated, talks are held in person on Thursdays, 3–4 pm, in Kilburn 2.19.
-      </p>
-    </section>
-
-    <section id="registration">
-      <h2>Registration</h2>
-
-      <div class="notice">
-        <p>
-          Registration is free. Please register interest using the following form:
-          <a href="https://forms.office.com/e/7VSqpt3QXy">https://forms.office.com/e/7VSqpt3QXy</a>
-        </p>
-      </div>
-    </section>
-
     <section id="talks">
       <h2>Talks</h2>
 
@@ -194,8 +166,9 @@
           <strong>Format:</strong> In person
         </p>
 
-        <details open>
+        <details>
           <summary>Abstract</summary>
+
           <p>
             Decentralized protocols often use signature adaptation to conditionally release a cryptographic secret to the public. However, standard primitives are inherently anonymous: anyone holding the correct witness can complete the authorization, and the identity of the completer remains hidden. Accountable systems, conversely, require joint authorization where only a designated counterparty can finalize the signature and release the secret.
           </p>
@@ -224,8 +197,9 @@
           <strong>Format:</strong> In person
         </p>
 
-        <details open>
+        <details>
           <summary>Abstract</summary>
+
           <p>
             (M/R)-LWE systems have to be aware of maliciously generated/altered key material, as decryption failures can reveal secret information. In systems such as ML-KEM, encapsulator key material is checked via the Fujisaki-Okamoto transform to prevent adversarial interference. However, no checks are required for decapsulator key material. This means that if an adversary is able to modify the public value used by the decapsulator they can produce a "poisoned key" which still works correctly for the overwhelming majority of legitimate inputs, but for which the decapsulator can arrange exchanges that leak information about the decapsulators private key even when the Fujisaki-Okamoto protection is in place.
           </p>
@@ -244,6 +218,7 @@
 
         <details>
           <summary>Abstract and speaker bio</summary>
+
           <p>
             Secure aggregation is a fundamental primitive for privacy-preserving federated learning, allowing a server to compute aggregates of client updates without learning any individual client data. Recent protocols have explored committee-based designs to reduce client overhead and support weakly connected participants. Yet existing approaches still incur significant communication and computation costs that scale with the number of clients or the size of model updates.
           </p>
@@ -275,6 +250,7 @@
 
         <details>
           <summary>Abstract</summary>
+
           <p>
             Digital computing is at a crossroads. Flipping a single bit in modern semiconductor devices consumes over a million times more energy than the theoretical minimum, while moving that bit across a chip requires an order of magnitude more than that. The rapid and widespread deployment of artificial intelligence has further intensified the demand for computing paradigms that combine high performance with ultralow power consumption, especially in areas such as healthcare, autonomous systems, and authentication, where low power, low latency, and data privacy are critical.
           </p>
@@ -297,6 +273,7 @@
 
         <details>
           <summary>Abstract</summary>
+
           <p>
             Software failures continue to cause severe economic and safety consequences, and testing alone is insufficient: stronger guarantees demand formal methods. As critical infrastructure runs on millions of lines of C, C++, and now Rust, regulators and industry are converging on the same conclusion. This talk traces how one family of tools, the CProver ecosystem, has spent two decades solving this problem, and where the work goes next.
           </p>
@@ -323,6 +300,7 @@
 
         <details>
           <summary>Abstract</summary>
+
           <p>
             "Neuromorphic computing" is a term used to describe systems that are engineered with the structure of biological nervous systems in mind but the exact relationship between neuromorphic computing and other fields, such as machine learning, is often not clear. This talk will give an introduction and a high-level conceptualisation of neuromorphic computing as a field of study before highlighting Edward's current research into neuromorphic approaches to event-based vision using spiking neural networks. This talk is intended to spark discussion; interruption and questions will be enthusiastically encouraged.
           </p>
@@ -341,6 +319,7 @@
 
         <details>
           <summary>Abstract</summary>
+
           <p>
             Deploying autonomous robots in safety-critical domains requires architectures that ensure operational effectiveness and safety compliance. In this talk, we present an architecture for developing reliable and verifiable autonomous robots in such domains. It features two distinct subsystems: an Intelligent Control System responsible for normal operations, and a Safety System that provides formally verifiable, independent oversight. We demonstrate this approach on an autonomous inspection robot in a simulated nuclear environment, where the Safety System is programmed to stop the robot whenever it detects that it is too close to an obstacle. The Safety System and its integration are formally verified and validated through simulation and lab experiments. Results show that this approach supports reliable, safety-assured autonomy and provides a robust framework that can be extended to additional requirements and a range of applications.
           </p>
@@ -364,6 +343,7 @@
 
         <details>
           <summary>Abstract</summary>
+
           <p>
             This talk is about an unpublished conjecture on recovering a point in a metric space from limited information. Perhaps someone in the audience will find a proof.
           </p>
@@ -382,6 +362,7 @@
 
         <details>
           <summary>Abstract</summary>
+
           <p>
             Random beacons serve as fundamental cryptographic infrastructure for generating publicly verifiable, unpredictable randomness in distributed systems, with particular significance in blockchain-based applications requiring fair and tamper-resistant entropy sources. However, premature leakage of randomness poses a significant threat to applications that rely on the beacon, such as RANDAO. In particular, agents participating in the beacon protocol might profit from learning the random out a priori even without tempering the output. This incentivises rational agents to form coalitions that break the underlying security assumptions of the beacon protocol to learn the random output. In this work, we propose and analyse a random beacon protocol for a rational setting. We show that our protocol returns even if all participating parties behave rationally and might form a grand coalition of all parties. To this end, we outline smart contracts for our protocol that offer bounties for rational parties that can betray their coalition. Therefore, these contracts build a mechanism that establishes mutual distrust between the rational parties, which ultimately stabilises honest behaviour and disincentivises coalitions.
           </p>
@@ -400,6 +381,7 @@
 
         <details>
           <summary>Abstract</summary>
+
           <p>
             Sparse neural networks promise inference-time efficiency, yet training them effectively remains a fundamental challenge. Despite advances in pruning methods that create sparse architectures, understanding why some sparse structures are better trainable than others with the same level of sparsity remains poorly understood. Aiming to develop a systematic approach to this fundamental problem, we propose a novel theoretical framework based on the theory of graph limits, particularly graphons, that characterises sparse neural networks in the infinite-width regime. Our key insight is that connectivity patterns of sparse neural networks induced by pruning methods converge to specific graphons as networks' width tends to infinity, which encodes implicit structural biases of different pruning methods.
           </p>
@@ -409,7 +391,7 @@
           </p>
 
           <p>
-            Overall, our framework provides theoretical insights into the impact of connectivity patterns on the trainability of various sparse network architectures. As such, it transforms the study of sparse neural networks from combinatorial graph problems into a rigorous framework of continuous operators, offering a new mechanism for analysing expressivity and generalisation in sparse neural networks.
+            Overall, our framework provides theoretical insights into the impact of connectivity patterns on the trainability of various sparse neural networks. As such, it transforms the study of sparse neural networks from combinatorial graph problems into a rigorous framework of continuous operators, offering a new mechanism for analysing expressivity and generalisation in sparse neural networks.
           </p>
         </details>
       </article>
@@ -426,6 +408,7 @@
 
         <details>
           <summary>Abstract</summary>
+
           <p>
             Anamorphic cryptography enables parties to communicate covertly even against a "dictator" who holds all secret keys and monitors network traffic. To avoid pre-shared keys, Persiano et al. proposed the notion of Public-Key Anamorphic Encryption (PK-AE). However, PK-AE is structurally demanding: it requires a single ciphertext to simultaneously carry both a regular and a covert message, a rigid constraint that has limited instantiations to complex, non-standard schemes.
           </p>
@@ -452,6 +435,7 @@
 
         <details>
           <summary>Abstract</summary>
+
           <p>
             The Internet is currently engaged in a huge cryptographic change as we look to deprecate quantum vulnerable cryptography such as RSA and elliptic curves in favour of new post-quantum algorithms. Although some excellent classical cryptanalysis has been done against the new designs, relatively little work has been done on their quantum security.
           </p>
@@ -467,7 +451,8 @@
       <h2>Contact</h2>
 
       <p>
-        For questions about the seminar series, please contact trey.li@manchester.ac.uk.
+        For questions about the seminar series, please contact
+        <a href="mailto:trey.li@manchester.ac.uk">trey.li@manchester.ac.uk</a>.
       </p>
     </section>
   </main>
