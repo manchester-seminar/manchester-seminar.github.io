@@ -3,25 +3,168 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Manchester Seminar Series</title>
+  <title>Manchester Quantum, Cryptography and Security Seminar</title>
+
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      max-width: 920px;
+      margin: 48px auto;
+      padding: 0 24px;
+      line-height: 1.65;
+      color: #222;
+      background: #fff;
+    }
+
+    header {
+      margin-bottom: 40px;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 28px;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+
+    h2 {
+      margin-top: 40px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid #e5e5e5;
+    }
+
+    h3 {
+      margin-top: 28px;
+      margin-bottom: 8px;
+    }
+
+    p {
+      margin: 12px 0;
+    }
+
+    .subtitle {
+      font-size: 1.08rem;
+      color: #444;
+    }
+
+    .talk {
+      margin-top: 28px;
+      padding: 22px 24px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      background: #fafafa;
+    }
+
+    .meta {
+      color: #444;
+      margin-top: 8px;
+      margin-bottom: 16px;
+    }
+
+    .note {
+      color: #555;
+      font-size: 0.95rem;
+    }
+
+    a {
+      color: #0645ad;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      margin-top: 56px;
+      padding-top: 24px;
+      border-top: 1px solid #ddd;
+      color: #666;
+      font-size: 0.95rem;
+    }
+  </style>
 </head>
+
 <body>
-  <h1>Manchester Seminar Series</h1>
+  <header>
+    <h1>Manchester Quantum, Cryptography and Security Seminar</h1>
 
-  <p>
-    This page provides information about upcoming and past talks in the Manchester seminar series.
-  </p>
+    <p class="subtitle">
+      A seminar series on cryptography, security, privacy, and the mathematical and computational foundations of secure systems.
+    </p>
 
-  <h2>Upcoming talks</h2>
+    <p>
+      The series brings together talks spanning theory and practice, including quantum and post-quantum cryptography, mathematical foundations, secure protocols, privacy-preserving technologies, and practical security challenges in modern computing.
+    </p>
+  </header>
 
-  <p>
-    Details of upcoming talks will be posted here.
-  </p>
+  <main>
+    <section>
+      <h2>Upcoming talks</h2>
 
-  <h2>Past talks</h2>
+      <article class="talk">
+        <h3>Waves and Whirlpools: Computing Without Moving Electrons</h3>
 
-  <p>
-    An archive of past talks will be added here.
-  </p>
+        <p class="meta">
+          <strong>Speaker:</strong> Dr Will Griggs<br>
+          <strong>Time:</strong> Thursday 11 June, 3–4 pm<br>
+          <strong>Location:</strong> Kilburn 2.19<br>
+          <strong>Format:</strong> In person
+        </p>
+
+        <p>
+          Digital computing is at a crossroads. Flipping a single bit in modern semiconductor devices consumes over a million times more energy than the theoretical minimum, while moving that bit across a chip requires an order of magnitude more than that. The rapid and widespread deployment of artificial intelligence has further intensified the demand for computing paradigms that combine high performance with ultralow power consumption, especially in areas such as healthcare, autonomous systems, and authentication, where low power, low latency, and data privacy are critical.
+        </p>
+
+        <p>
+          In this talk, I will explore how spintronics offers a path towards more efficient computing. I will begin by discussing our work on Fe50Rh50, a material with unusual magnetic behaviour that can be harnessed for high-density data storage and terahertz signal generation. I will then introduce two emerging information carriers in magnetic systems. The first are skyrmions, which can be thought of as nanoscale magnetic whirlpools that are stable, compact, and easy to manipulate. The second are magnons, which are wave-like excitations that propagate through a magnetic material. Both can be leveraged to carry information without the need to move electrons. I will discuss how we are working to control and functionalise these excitations for use in neuromorphic hardware, with the aim of enabling new computing architectures that are both powerful and energy efficient.
+        </p>
+      </article>
+
+      <article class="talk">
+        <h3>Single-Server Secure Aggregation with O(1) Server-Committee Communication at Scale</h3>
+
+        <p class="meta">
+          <strong>Speaker:</strong> Dr Alireza Kavousi, UCL<br>
+          <strong>Time:</strong> Thursday 25 June, 3–4 pm<br>
+          <strong>Location:</strong> Kilburn 2.19<br>
+          <strong>Format:</strong> In person
+        </p>
+
+        <p>
+          Secure aggregation is a fundamental primitive for privacy-preserving federated learning, allowing a server to compute aggregates of client updates without learning any individual client data. Recent protocols have explored committee-based designs to reduce client overhead and support weakly connected participants. Yet existing approaches still incur significant communication and computation costs that scale with the number of clients or the size of model updates.
+        </p>
+
+        <p>
+          I will present Lighthouse, a new secure aggregation protocol that supports one-shot client communication while achieving constant server–committee communication and computation overhead, independent of both the number of clients and the dimension of the input vectors. The key technical ingredient is a novel application of recent advances in batched threshold encryption, enabling succinct server–committee interaction while preserving security and correctness. I will also discuss an extension that supports dynamic client participation, an important requirement for large-scale federated learning systems.
+        </p>
+
+        <p>
+          <strong>Paper:</strong>
+          <a href="https://eprint.iacr.org/2026/346.pdf">https://eprint.iacr.org/2026/346.pdf</a>
+        </p>
+
+        <p>
+          <strong>Speaker bio:</strong>
+          Alireza Kavousi recently completed his PhD in Computer Science at University College London. His research focuses on distributed cryptography and its applications to blockchain systems. He has published in security and cryptography venues including USENIX Security, IEEE S&amp;P, NDSS, and Asiacrypt.
+        </p>
+      </article>
+    </section>
+
+    <section>
+      <h2>Past talks</h2>
+
+      <p class="note">
+        An archive of past talks will be added here.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>
+      Manchester Quantum, Cryptography and Security Seminar.
+    </p>
+  </footer>
 </body>
 </html>
