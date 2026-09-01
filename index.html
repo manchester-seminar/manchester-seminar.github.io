@@ -13,7 +13,6 @@
       --light: #f7f7f7;
       --lighter: #fbfbfb;
       --link: #0645ad;
-      --accent: #222;
     }
 
     * {
@@ -102,11 +101,6 @@
       background: var(--lighter);
     }
 
-    .talk.upcoming {
-      background: #fafafa;
-      border-color: #cfcfcf;
-    }
-
     .date {
       color: var(--muted);
       font-size: 0.96rem;
@@ -126,16 +120,11 @@
     summary {
       cursor: pointer;
       font-weight: 600;
-      color: var(--accent);
+      color: var(--text);
     }
 
     summary:hover {
       text-decoration: underline;
-    }
-
-    .small {
-      color: var(--muted);
-      font-size: 0.95rem;
     }
 
     footer {
@@ -162,9 +151,8 @@
 
     <nav class="nav">
       <a href="#about">About</a>
-      <a href="#upcoming">Upcoming talks</a>
+      <a href="#talks">Talks</a>
       <a href="#registration">Registration</a>
-      <a href="#past">Past talks</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
@@ -182,28 +170,25 @@
       </p>
     </section>
 
-    <section id="upcoming">
-      <h2>Upcoming talks</h2>
+    <section id="registration">
+      <h2>Registration</h2>
 
-      <article class="talk upcoming">
-        <p class="date">Thursday 3 September 2026, 3–4 pm</p>
-        <h3>Poisoning ML-KEM public keys</h3>
-
-        <p class="meta">
-          <strong>Speaker:</strong> Prof. Daniel Shiu<br>
-          <strong>Location:</strong> Kilburn 2.19<br>
-          <strong>Format:</strong> In person
+      <div class="notice">
+        <p>
+          Registration is free. Please register interest using the following form:
+          <a href="https://forms.office.com/e/7VSqpt3QXy">https://forms.office.com/e/7VSqpt3QXy</a>
         </p>
+      </div>
+    </section>
 
-        <details open>
-          <summary>Abstract</summary>
-          <p>
-            (M/R)-LWE systems have to be aware of maliciously generated/altered key material, as decryption failures can reveal secret information. In systems such as ML-KEM, encapsulator key material is checked via the Fujisaki-Okamoto transform to prevent adversarial interference. However, no checks are required for decapsulator key material. This means that if an adversary is able to modify the public value used by the decapsulator they can produce a "poisoned key" which still works correctly for the overwhelming majority of legitimate inputs, but for which the decapsulator can arrange exchanges that leak information about the decapsulators private key even when the Fujisaki-Okamoto protection is in place.
-          </p>
-        </details>
-      </article>
+    <section id="talks">
+      <h2>Talks</h2>
 
-      <article class="talk upcoming">
+      <p>
+        Talks are listed in reverse chronological order. New talks are added at the top.
+      </p>
+
+      <article class="talk">
         <p class="date">Thursday 17 September 2026, 3–4 pm</p>
         <h3>Identity-bound Witness Extractable Signatures and Application to Ethereum’s ePBS</h3>
 
@@ -232,25 +217,10 @@
           </p>
         </details>
       </article>
-    </section>
-
-    <section id="registration">
-      <h2>Registration</h2>
-
-      <div class="notice">
-        <p>
-          Registration is free. Please register interest using the following form:
-          <a href="https://forms.office.com/e/7VSqpt3QXy">https://forms.office.com/e/7VSqpt3QXy</a>
-        </p>
-      </div>
-    </section>
-
-    <section id="past">
-      <h2>Past talks</h2>
 
       <article class="talk">
-        <p class="date">Thursday 5 February 2026, 3–4 pm</p>
-        <h3>Quantum Cryptanalysis of Post-quantum Algorithms</h3>
+        <p class="date">Thursday 3 September 2026, 3–4 pm</p>
+        <h3>Poisoning ML-KEM public keys</h3>
 
         <p class="meta">
           <strong>Speaker:</strong> Prof. Daniel Shiu<br>
@@ -258,191 +228,10 @@
           <strong>Format:</strong> In person
         </p>
 
-        <details>
+        <details open>
           <summary>Abstract</summary>
           <p>
-            The Internet is currently engaged in a huge cryptographic change as we look to deprecate quantum vulnerable cryptography such as RSA and elliptic curves in favour of new post-quantum algorithms. Although some excellent classical cryptanalysis has been done against the new designs, relatively little work has been done on their quantum security.
-          </p>
-
-          <p>
-            This session will talk through some simple quantum algorithms and suggest how they might be modifiable to attack a mathematical problem known as Learning Parity with Errors which underlies many post-quantum methods.
-          </p>
-        </details>
-      </article>
-
-      <article class="talk">
-        <p class="date">Thursday 19 February 2026, 3–4 pm</p>
-        <h3>Anamorphic Kernel: Covert Communication Made Modular</h3>
-
-        <p class="meta">
-          <strong>Speaker:</strong> Mr. Christos Sakkas<br>
-          <strong>Location:</strong> Kilburn 2.19<br>
-          <strong>Format:</strong> In person
-        </p>
-
-        <details>
-          <summary>Abstract</summary>
-          <p>
-            Anamorphic cryptography enables parties to communicate covertly even against a "dictator" who holds all secret keys and monitors network traffic. To avoid pre-shared keys, Persiano et al. proposed the notion of Public-Key Anamorphic Encryption (PK-AE). However, PK-AE is structurally demanding: it requires a single ciphertext to simultaneously carry both a regular and a covert message, a rigid constraint that has limited instantiations to complex, non-standard schemes.
-          </p>
-
-          <p>
-            In this work, we propose a modular alternative that decouples the generation of a covert payload from its transport. We introduce the Anamorphic Kernel, a minimal primitive that creates a hidden cryptographic instance within a standard one. To a dictator, the kernel's public key appears to be a standard key for a regular scheme; to the receiver, it reveals a hidden sub-parameter set that allows for the decryption of pseudorandom payloads. We instantiate this primitive based on the LWE assumption, by surreptitiously embedding a smaller LWE instance within a standard Regev public matrix.
-          </p>
-
-          <p>
-            We then demonstrate how the kernel's pseudorandom payloads can be transported via standard protocols. First, we construct a transport layer using a Key Encapsulation Mechanism (KEM), where the kernel payload is carried within the encapsulation ciphertext. This construction resists active dictator attacks, as any attempt to "sanitize" the ciphertext destroys the session key and breaks protocol correctness. Second, we introduce Anamorphic Secret Sharing, where the kernel payload is transported within the coefficients of a Shamir sharing polynomial. Our results shift the paradigm of anamorphic cryptography from monolithic scheme design to a flexible, modular architecture.
-          </p>
-        </details>
-      </article>
-
-      <article class="talk">
-        <p class="date">Tuesday 24 February 2026, 11 am–12 pm</p>
-        <h3>Pruning at Initialisation through the lens of Graphon Limits, or How to Prune Neural Networks in a Principled Way</h3>
-
-        <p class="meta">
-          <strong>Speaker:</strong> Prof. Long Tran-Thanh<br>
-          <strong>Location:</strong> IT407<br>
-          <strong>Format:</strong> In person
-        </p>
-
-        <details>
-          <summary>Abstract</summary>
-          <p>
-            Sparse neural networks promise inference-time efficiency, yet training them effectively remains a fundamental challenge. Despite advances in pruning methods that create sparse architectures, understanding why some sparse structures are better trainable than others with the same level of sparsity remains poorly understood. Aiming to develop a systematic approach to this fundamental problem, we propose a novel theoretical framework based on the theory of graph limits, particularly graphons, that characterises sparse neural networks in the infinite-width regime. Our key insight is that connectivity patterns of sparse neural networks induced by pruning methods converge to specific graphons as networks' width tends to infinity, which encodes implicit structural biases of different pruning methods.
-          </p>
-
-          <p>
-            Based on this, we derive a Graphon Neural Tangent Kernel (Graphon NTK) to study the training dynamics of sparse networks in the infinite width limit. Graphon NTK provides a general framework for the theoretical analysis of sparse networks. We empirically show that the spectral analysis of Graphon NTK correlates with observed training dynamics of sparse networks, explaining the varying convergence behaviours of different pruning methods. In addition, we also prove two fundamental theoretical results: a Universal Approximation Theorem for sparse networks that depends only on the intrinsic dimension of active coordinate subspaces; and a Graphon-NTK generalisation bound demonstrating how the limit graphon modulates the kernel geometry to align with informative features.
-          </p>
-
-          <p>
-            Overall, our framework provides theoretical insights into the impact of connectivity patterns on the trainability of various sparse network architectures. As such, it transforms the study of sparse neural networks from combinatorial graph problems into a rigorous framework of continuous operators, offering a new mechanism for analysing expressivity and generalisation in sparse neural networks.
-          </p>
-        </details>
-      </article>
-
-      <article class="talk">
-        <p class="date">Thursday 5 March 2026, 3–4 pm</p>
-        <h3>Rational Randomness Beacons</h3>
-
-        <p class="meta">
-          <strong>Speaker:</strong> George Lorimer<br>
-          <strong>Location:</strong> Kilburn 2.19<br>
-          <strong>Format:</strong> In person
-        </p>
-
-        <details>
-          <summary>Abstract</summary>
-          <p>
-            Random beacons serve as fundamental cryptographic infrastructure for generating publicly verifiable, unpredictable randomness in distributed systems, with particular significance in blockchain-based applications requiring fair and tamper-resistant entropy sources. However, premature leakage of randomness poses a significant threat to applications that rely on the beacon, such as RANDAO. In particular, agents participating in the beacon protocol might profit from learning the random out a priori even without tempering the output. This incentivises rational agents to form coalitions that break the underlying security assumptions of the beacon protocol to learn the random output. In this work, we propose and analyse a random beacon protocol for a rational setting. We show that our protocol returns even if all participating parties behave rationally and might form a grand coalition of all parties. To this end, we outline smart contracts for our protocol that offer bounties for rational parties that can betray their coalition. Therefore, these contracts build a mechanism that establishes mutual distrust between the rational parties, which ultimately stabilises honest behaviour and disincentivises coalitions.
-          </p>
-        </details>
-      </article>
-
-      <article class="talk">
-        <p class="date">Thursday 19 March 2026, 3–4 pm</p>
-        <h3>A little conjecture on point finding in metric spaces</h3>
-
-        <p class="meta">
-          <strong>Speaker:</strong> Trey Li<br>
-          <strong>Location:</strong> Kilburn 2.19<br>
-          <strong>Format:</strong> In person
-        </p>
-
-        <details>
-          <summary>Abstract</summary>
-          <p>
-            This talk is about an unpublished conjecture on recovering a point in a metric space from limited information. Perhaps someone in the audience will find a proof.
-          </p>
-        </details>
-      </article>
-
-      <article class="talk">
-        <p class="date">Thursday 2 April 2026, 3–4 pm</p>
-        <h3>An Architecture for Autonomous Robots in Safety-Critical Domains</h3>
-
-        <p class="meta">
-          <strong>Speaker:</strong> Diana Benjumea Hernandez<br>
-          <strong>Location:</strong> Kilburn 2.19<br>
-          <strong>Format:</strong> In person
-        </p>
-
-        <details>
-          <summary>Abstract</summary>
-          <p>
-            Deploying autonomous robots in safety-critical domains requires architectures that ensure operational effectiveness and safety compliance. In this talk, we present an architecture for developing reliable and verifiable autonomous robots in such domains. It features two distinct subsystems: an Intelligent Control System responsible for normal operations, and a Safety System that provides formally verifiable, independent oversight. We demonstrate this approach on an autonomous inspection robot in a simulated nuclear environment, where the Safety System is programmed to stop the robot whenever it detects that it is too close to an obstacle. The Safety System and its integration are formally verified and validated through simulation and lab experiments. Results show that this approach supports reliable, safety-assured autonomy and provides a robust framework that can be extended to additional requirements and a range of applications.
-          </p>
-
-          <p>
-            Reference: D. C. Benjumea, M. Farrell, and L. A. Dennis, “Safe-ROS: An architecture for Autonomous Robots in Safety-Critical Domains,” in Proceedings Seventh International Workshop on Formal Methods for Autonomous Systems, Paris, 17th to 19th of November 2025, vol. 436 of Electronic Proceedings in Theoretical Computer Science, pp. 48–68, Open Publishing Association, 2025.
-            <a href="https://doi.org/10.4204/EPTCS.436.6">https://doi.org/10.4204/EPTCS.436.6</a>
-          </p>
-        </details>
-      </article>
-
-      <article class="talk">
-        <p class="date">Thursday 30 April 2026, 3–4 pm</p>
-        <h3>Neuromorphic Computing: Spiking Neural Networks for Event-based Edge Intelligence</h3>
-
-        <p class="meta">
-          <strong>Speaker:</strong> Edward Jones<br>
-          <strong>Location:</strong> Kilburn 2.19<br>
-          <strong>Format:</strong> In person
-        </p>
-
-        <details>
-          <summary>Abstract</summary>
-          <p>
-            "Neuromorphic computing" is a term used to describe systems that are engineered with the structure of biological nervous systems in mind but the exact relationship between neuromorphic computing and other fields, such as machine learning, is often not clear. This talk will give an introduction and a high-level conceptualisation of neuromorphic computing as a field of study before highlighting Edward's current research into neuromorphic approaches to event-based vision using spiking neural networks. This talk is intended to spark discussion; interruption and questions will be enthusiastically encouraged.
-          </p>
-        </details>
-      </article>
-
-      <article class="talk">
-        <p class="date">Thursday 28 May 2026, 3–4 pm</p>
-        <h3>CProver tools</h3>
-
-        <p class="meta">
-          <strong>Speaker:</strong> Dr Rafael Sá Menezes<br>
-          <strong>Location:</strong> Kilburn 2.19<br>
-          <strong>Format:</strong> In person
-        </p>
-
-        <details>
-          <summary>Abstract</summary>
-          <p>
-            Software failures continue to cause severe economic and safety consequences, and testing alone is insufficient: stronger guarantees demand formal methods. As critical infrastructure runs on millions of lines of C, C++, and now Rust, regulators and industry are converging on the same conclusion. This talk traces how one family of tools, the CProver ecosystem, has spent two decades solving this problem, and where the work goes next.
-          </p>
-
-          <p>
-            We begin with the security motivation by introducing soundness, completeness, and bounded versus unbounded verification through short C examples that assume no prior background in formal methods. From there, we walk through the core technique shared by every CProver tool: lower the program to an intermediate representation called GOTO, symbolically execute it up to a bound to obtain a loop-free trace, encode that trace as an SMT formula, and let a decision procedure either prove the property or return a concrete counterexample.
-          </p>
-
-          <p>
-            From this shared backbone an entire family has grown: CBMC, ESBMC, 2LS, CSeq, and Kani. Each keeps the same pipeline and specialises one stage. We will look at how they diverged historically, where they are used in industry and what they still do not share under the hood. The talk closes on recent work giving GOTO formal operational semantics, turning symbolic execution and SMT encoding into precisely specified procedures and enabling interoperability between CBMC, ESBMC, and Kani through the GOTO Transcoder.
-          </p>
-        </details>
-      </article>
-
-      <article class="talk">
-        <p class="date">Thursday 11 June 2026, 3–4 pm</p>
-        <h3>Waves and Whirlpools: Computing Without Moving Electrons</h3>
-
-        <p class="meta">
-          <strong>Speaker:</strong> Dr Will Griggs<br>
-          <strong>Location:</strong> Kilburn 2.19<br>
-          <strong>Format:</strong> In person
-        </p>
-
-        <details>
-          <summary>Abstract</summary>
-          <p>
-            Digital computing is at a crossroads. Flipping a single bit in modern semiconductor devices consumes over a million times more energy than the theoretical minimum, while moving that bit across a chip requires an order of magnitude more than that. The rapid and widespread deployment of artificial intelligence has further intensified the demand for computing paradigms that combine high performance with ultralow power consumption, especially in areas such as healthcare, autonomous systems, and authentication, where low power, low latency, and data privacy are critical.
-          </p>
-
-          <p>
-            In this talk, I will explore how spintronics offers a path towards more efficient computing. I will begin by discussing our work on Fe50Rh50, a material with unusual magnetic behaviour that can be harnessed for high-density data storage and terahertz signal generation. I will then introduce two emerging information carriers in magnetic systems. The first are skyrmions, which can be thought of as nanoscale magnetic whirlpools that are stable, compact, and easy to manipulate. The second are magnons, which are wave-like excitations that propagate through a magnetic material. Both can be leveraged to carry information without the need to move electrons. I will discuss how we are working to control and functionalise these excitations for use in neuromorphic hardware, with the aim of enabling new computing architectures that are both powerful and energy efficient.
+            (M/R)-LWE systems have to be aware of maliciously generated/altered key material, as decryption failures can reveal secret information. In systems such as ML-KEM, encapsulator key material is checked via the Fujisaki-Okamoto transform to prevent adversarial interference. However, no checks are required for decapsulator key material. This means that if an adversary is able to modify the public value used by the decapsulator they can produce a "poisoned key" which still works correctly for the overwhelming majority of legitimate inputs, but for which the decapsulator can arrange exchanges that leak information about the decapsulators private key even when the Fujisaki-Okamoto protection is in place.
           </p>
         </details>
       </article>
@@ -474,6 +263,205 @@
 
           <p>
             Speaker bio: Alireza Kavousi recently completed his PhD in Computer Science at University College London. His research focuses on distributed cryptography and its applications to blockchain systems. He has published in security and cryptography venues including USENIX Security, IEEE S&amp;P, NDSS, and Asiacrypt.
+          </p>
+        </details>
+      </article>
+
+      <article class="talk">
+        <p class="date">Thursday 11 June 2026, 3–4 pm</p>
+        <h3>Waves and Whirlpools: Computing Without Moving Electrons</h3>
+
+        <p class="meta">
+          <strong>Speaker:</strong> Dr Will Griggs<br>
+          <strong>Location:</strong> Kilburn 2.19<br>
+          <strong>Format:</strong> In person
+        </p>
+
+        <details>
+          <summary>Abstract</summary>
+          <p>
+            Digital computing is at a crossroads. Flipping a single bit in modern semiconductor devices consumes over a million times more energy than the theoretical minimum, while moving that bit across a chip requires an order of magnitude more than that. The rapid and widespread deployment of artificial intelligence has further intensified the demand for computing paradigms that combine high performance with ultralow power consumption, especially in areas such as healthcare, autonomous systems, and authentication, where low power, low latency, and data privacy are critical.
+          </p>
+
+          <p>
+            In this talk, I will explore how spintronics offers a path towards more efficient computing. I will begin by discussing our work on Fe50Rh50, a material with unusual magnetic behaviour that can be harnessed for high-density data storage and terahertz signal generation. I will then introduce two emerging information carriers in magnetic systems. The first are skyrmions, which can be thought of as nanoscale magnetic whirlpools that are stable, compact, and easy to manipulate. The second are magnons, which are wave-like excitations that propagate through a magnetic material. Both can be leveraged to carry information without the need to move electrons. I will discuss how we are working to control and functionalise these excitations for use in neuromorphic hardware, with the aim of enabling new computing architectures that are both powerful and energy efficient.
+          </p>
+        </details>
+      </article>
+
+      <article class="talk">
+        <p class="date">Thursday 28 May 2026, 3–4 pm</p>
+        <h3>CProver tools</h3>
+
+        <p class="meta">
+          <strong>Speaker:</strong> Dr Rafael Sá Menezes<br>
+          <strong>Location:</strong> Kilburn 2.19<br>
+          <strong>Format:</strong> In person
+        </p>
+
+        <details>
+          <summary>Abstract</summary>
+          <p>
+            Software failures continue to cause severe economic and safety consequences, and testing alone is insufficient: stronger guarantees demand formal methods. As critical infrastructure runs on millions of lines of C, C++, and now Rust, regulators and industry are converging on the same conclusion. This talk traces how one family of tools, the CProver ecosystem, has spent two decades solving this problem, and where the work goes next.
+          </p>
+
+          <p>
+            We begin with the security motivation by introducing soundness, completeness, and bounded versus unbounded verification through short C examples that assume no prior background in formal methods. From there, we walk through the core technique shared by every CProver tool: lower the program to an intermediate representation called GOTO, symbolically execute it up to a bound to obtain a loop-free trace, encode that trace as an SMT formula, and let a decision procedure either prove the property or return a concrete counterexample.
+          </p>
+
+          <p>
+            From this shared backbone an entire family has grown: CBMC, ESBMC, 2LS, CSeq, and Kani. Each keeps the same pipeline and specialises one stage. We will look at how they diverged historically, where they are used in industry and what they still do not share under the hood. The talk closes on recent work giving GOTO formal operational semantics, turning symbolic execution and SMT encoding into precisely specified procedures and enabling interoperability between CBMC, ESBMC, and Kani through the GOTO Transcoder.
+          </p>
+        </details>
+      </article>
+
+      <article class="talk">
+        <p class="date">Thursday 30 April 2026, 3–4 pm</p>
+        <h3>Neuromorphic Computing: Spiking Neural Networks for Event-based Edge Intelligence</h3>
+
+        <p class="meta">
+          <strong>Speaker:</strong> Edward Jones<br>
+          <strong>Location:</strong> Kilburn 2.19<br>
+          <strong>Format:</strong> In person
+        </p>
+
+        <details>
+          <summary>Abstract</summary>
+          <p>
+            "Neuromorphic computing" is a term used to describe systems that are engineered with the structure of biological nervous systems in mind but the exact relationship between neuromorphic computing and other fields, such as machine learning, is often not clear. This talk will give an introduction and a high-level conceptualisation of neuromorphic computing as a field of study before highlighting Edward's current research into neuromorphic approaches to event-based vision using spiking neural networks. This talk is intended to spark discussion; interruption and questions will be enthusiastically encouraged.
+          </p>
+        </details>
+      </article>
+
+      <article class="talk">
+        <p class="date">Thursday 2 April 2026, 3–4 pm</p>
+        <h3>An Architecture for Autonomous Robots in Safety-Critical Domains</h3>
+
+        <p class="meta">
+          <strong>Speaker:</strong> Diana Benjumea Hernandez<br>
+          <strong>Location:</strong> Kilburn 2.19<br>
+          <strong>Format:</strong> In person
+        </p>
+
+        <details>
+          <summary>Abstract</summary>
+          <p>
+            Deploying autonomous robots in safety-critical domains requires architectures that ensure operational effectiveness and safety compliance. In this talk, we present an architecture for developing reliable and verifiable autonomous robots in such domains. It features two distinct subsystems: an Intelligent Control System responsible for normal operations, and a Safety System that provides formally verifiable, independent oversight. We demonstrate this approach on an autonomous inspection robot in a simulated nuclear environment, where the Safety System is programmed to stop the robot whenever it detects that it is too close to an obstacle. The Safety System and its integration are formally verified and validated through simulation and lab experiments. Results show that this approach supports reliable, safety-assured autonomy and provides a robust framework that can be extended to additional requirements and a range of applications.
+          </p>
+
+          <p>
+            Reference: D. C. Benjumea, M. Farrell, and L. A. Dennis, “Safe-ROS: An architecture for Autonomous Robots in Safety-Critical Domains,” in Proceedings Seventh International Workshop on Formal Methods for Autonomous Systems, Paris, 17th to 19th of November 2025, vol. 436 of Electronic Proceedings in Theoretical Computer Science, pp. 48–68, Open Publishing Association, 2025.
+            <a href="https://doi.org/10.4204/EPTCS.436.6">https://doi.org/10.4204/EPTCS.436.6</a>
+          </p>
+        </details>
+      </article>
+
+      <article class="talk">
+        <p class="date">Thursday 19 March 2026, 3–4 pm</p>
+        <h3>A little conjecture on point finding in metric spaces</h3>
+
+        <p class="meta">
+          <strong>Speaker:</strong> Trey Li<br>
+          <strong>Location:</strong> Kilburn 2.19<br>
+          <strong>Format:</strong> In person
+        </p>
+
+        <details>
+          <summary>Abstract</summary>
+          <p>
+            This talk is about an unpublished conjecture on recovering a point in a metric space from limited information. Perhaps someone in the audience will find a proof.
+          </p>
+        </details>
+      </article>
+
+      <article class="talk">
+        <p class="date">Thursday 5 March 2026, 3–4 pm</p>
+        <h3>Rational Randomness Beacons</h3>
+
+        <p class="meta">
+          <strong>Speaker:</strong> George Lorimer<br>
+          <strong>Location:</strong> Kilburn 2.19<br>
+          <strong>Format:</strong> In person
+        </p>
+
+        <details>
+          <summary>Abstract</summary>
+          <p>
+            Random beacons serve as fundamental cryptographic infrastructure for generating publicly verifiable, unpredictable randomness in distributed systems, with particular significance in blockchain-based applications requiring fair and tamper-resistant entropy sources. However, premature leakage of randomness poses a significant threat to applications that rely on the beacon, such as RANDAO. In particular, agents participating in the beacon protocol might profit from learning the random out a priori even without tempering the output. This incentivises rational agents to form coalitions that break the underlying security assumptions of the beacon protocol to learn the random output. In this work, we propose and analyse a random beacon protocol for a rational setting. We show that our protocol returns even if all participating parties behave rationally and might form a grand coalition of all parties. To this end, we outline smart contracts for our protocol that offer bounties for rational parties that can betray their coalition. Therefore, these contracts build a mechanism that establishes mutual distrust between the rational parties, which ultimately stabilises honest behaviour and disincentivises coalitions.
+          </p>
+        </details>
+      </article>
+
+      <article class="talk">
+        <p class="date">Tuesday 24 February 2026, 11 am–12 pm</p>
+        <h3>Pruning at Initialisation through the lens of Graphon Limits, or How to Prune Neural Networks in a Principled Way</h3>
+
+        <p class="meta">
+          <strong>Speaker:</strong> Prof. Long Tran-Thanh<br>
+          <strong>Location:</strong> IT407<br>
+          <strong>Format:</strong> In person
+        </p>
+
+        <details>
+          <summary>Abstract</summary>
+          <p>
+            Sparse neural networks promise inference-time efficiency, yet training them effectively remains a fundamental challenge. Despite advances in pruning methods that create sparse architectures, understanding why some sparse structures are better trainable than others with the same level of sparsity remains poorly understood. Aiming to develop a systematic approach to this fundamental problem, we propose a novel theoretical framework based on the theory of graph limits, particularly graphons, that characterises sparse neural networks in the infinite-width regime. Our key insight is that connectivity patterns of sparse neural networks induced by pruning methods converge to specific graphons as networks' width tends to infinity, which encodes implicit structural biases of different pruning methods.
+          </p>
+
+          <p>
+            Based on this, we derive a Graphon Neural Tangent Kernel (Graphon NTK) to study the training dynamics of sparse networks in the infinite width limit. Graphon NTK provides a general framework for the theoretical analysis of sparse networks. We empirically show that the spectral analysis of Graphon NTK correlates with observed training dynamics of sparse networks, explaining the varying convergence behaviours of different pruning methods. In addition, we also prove two fundamental theoretical results: a Universal Approximation Theorem for sparse networks that depends only on the intrinsic dimension of active coordinate subspaces; and a Graphon-NTK generalisation bound demonstrating how the limit graphon modulates the kernel geometry to align with informative features.
+          </p>
+
+          <p>
+            Overall, our framework provides theoretical insights into the impact of connectivity patterns on the trainability of various sparse network architectures. As such, it transforms the study of sparse neural networks from combinatorial graph problems into a rigorous framework of continuous operators, offering a new mechanism for analysing expressivity and generalisation in sparse neural networks.
+          </p>
+        </details>
+      </article>
+
+      <article class="talk">
+        <p class="date">Thursday 19 February 2026, 3–4 pm</p>
+        <h3>Anamorphic Kernel: Covert Communication Made Modular</h3>
+
+        <p class="meta">
+          <strong>Speaker:</strong> Mr. Christos Sakkas<br>
+          <strong>Location:</strong> Kilburn 2.19<br>
+          <strong>Format:</strong> In person
+        </p>
+
+        <details>
+          <summary>Abstract</summary>
+          <p>
+            Anamorphic cryptography enables parties to communicate covertly even against a "dictator" who holds all secret keys and monitors network traffic. To avoid pre-shared keys, Persiano et al. proposed the notion of Public-Key Anamorphic Encryption (PK-AE). However, PK-AE is structurally demanding: it requires a single ciphertext to simultaneously carry both a regular and a covert message, a rigid constraint that has limited instantiations to complex, non-standard schemes.
+          </p>
+
+          <p>
+            In this work, we propose a modular alternative that decouples the generation of a covert payload from its transport. We introduce the Anamorphic Kernel, a minimal primitive that creates a hidden cryptographic instance within a standard one. To a dictator, the kernel's public key appears to be a standard key for a regular scheme; to the receiver, it reveals a hidden sub-parameter set that allows for the decryption of pseudorandom payloads. We instantiate this primitive based on the LWE assumption, by surreptitiously embedding a smaller LWE instance within a standard Regev public matrix.
+          </p>
+
+          <p>
+            We then demonstrate how the kernel's pseudorandom payloads can be transported via standard protocols. First, we construct a transport layer using a Key Encapsulation Mechanism (KEM), where the kernel payload is carried within the encapsulation ciphertext. This construction resists active dictator attacks, as any attempt to "sanitize" the ciphertext destroys the session key and breaks protocol correctness. Second, we introduce Anamorphic Secret Sharing, where the kernel payload is transported within the coefficients of a Shamir sharing polynomial. Our results shift the paradigm of anamorphic cryptography from monolithic scheme design to a flexible, modular architecture.
+          </p>
+        </details>
+      </article>
+
+      <article class="talk">
+        <p class="date">Thursday 5 February 2026, 3–4 pm</p>
+        <h3>Quantum Cryptanalysis of Post-quantum Algorithms</h3>
+
+        <p class="meta">
+          <strong>Speaker:</strong> Prof. Daniel Shiu<br>
+          <strong>Location:</strong> Kilburn 2.19<br>
+          <strong>Format:</strong> In person
+        </p>
+
+        <details>
+          <summary>Abstract</summary>
+          <p>
+            The Internet is currently engaged in a huge cryptographic change as we look to deprecate quantum vulnerable cryptography such as RSA and elliptic curves in favour of new post-quantum algorithms. Although some excellent classical cryptanalysis has been done against the new designs, relatively little work has been done on their quantum security.
+          </p>
+
+          <p>
+            This session will talk through some simple quantum algorithms and suggest how they might be modifiable to attack a mathematical problem known as Learning Parity with Errors which underlies many post-quantum methods.
           </p>
         </details>
       </article>
