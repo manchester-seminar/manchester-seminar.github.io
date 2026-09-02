@@ -165,37 +165,6 @@
 
       <article class="talk">
         <p class="date">Date to be confirmed</p>
-        <h3>Identity-bound Witness Extractable Signatures and Application to Ethereum’s ePBS</h3>
-
-        <p class="meta">
-          <strong>Speaker:</strong> Christos Sakkas<br>
-          <strong>Location:</strong> Kilburn 2.19<br>
-          <strong>Format:</strong> In person
-        </p>
-
-        <details>
-          <summary>Abstract</summary>
-
-          <p>
-            Decentralized protocols often use signature adaptation to conditionally release a cryptographic secret to the public. However, standard primitives are inherently anonymous: anyone holding the correct witness can complete the authorization, and the identity of the completer remains hidden. Accountable systems, conversely, require joint authorization where only a designated counterparty can finalize the signature and release the secret.
-          </p>
-
-          <p>
-            We introduce Identity-Bound Witness Extractable Signatures (IWES), a novel primitive that allows a Sender to issue a pre-signature locked to a specific Receiver. To complete the signature, the Receiver must inject a witness explicitly bound to its public identity. This completed signature publicly reveals the witness, attributing the final action to the Receiver while allowing the witness to serve as a cryptographic key.
-          </p>
-
-          <p>
-            We demonstrate the utility of IWES by applying it to Ethereum’s enshrined Proposer-Builder Separation (ePBS), directly resolving the critical Payload Timeliness vulnerability. Currently, ePBS relies on a Payload Timeliness Committee to subjectively vote on whether a Builder revealed a payload after a Proposer committed to a block header. By integrating IWES, the Proposer’s pre-signature is locked to the winning Builder. To finalize the consensus signature, the Builder must release a witness that is itself the payload decryption key. This aligns economic incentives so that a rational Builder gains nothing by withholding the payload. Consequently, payload availability becomes an objective, slashable property of the block signature, eliminating the need for a dedicated committee.
-          </p>
-
-          <p>
-            Finally, we provide a construction of IWES based on the hardness of the Module-LWE and Module-SIS assumptions, and validate it through a portable C implementation. Our benchmarks demonstrate that the construction produces post-quantum signatures of approximately 22 KB and the overhead on the entire ePBS pipeline is under 11 ms, comfortably within Ethereum’s slot and bandwidth constraints.
-          </p>
-        </details>
-      </article>
-
-      <article class="talk">
-        <p class="date">Date to be confirmed</p>
         <h3>Poisoning ML-KEM public keys</h3>
 
         <p class="meta">
@@ -241,6 +210,37 @@
 
           <p>
             Speaker bio: Alireza Kavousi recently completed his PhD in Computer Science at University College London. His research focuses on distributed cryptography and its applications to blockchain systems. He has published in security and cryptography venues including USENIX Security, IEEE S&amp;P, NDSS, and Asiacrypt.
+          </p>
+        </details>
+      </article> 
+
+      <article class="talk">
+        <p class="date">Date to be confirmed</p>
+        <h3>Identity-bound Witness Extractable Signatures and Application to Ethereum’s ePBS</h3>
+
+        <p class="meta">
+          <strong>Speaker:</strong> Christos Sakkas<br>
+          <strong>Location:</strong> Kilburn 2.19<br>
+          <strong>Format:</strong> In person
+        </p>
+
+        <details>
+          <summary>Abstract</summary>
+
+          <p>
+            Decentralized protocols often use signature adaptation to conditionally release a cryptographic secret to the public. However, standard primitives are inherently anonymous: anyone holding the correct witness can complete the authorization, and the identity of the completer remains hidden. Accountable systems, conversely, require joint authorization where only a designated counterparty can finalize the signature and release the secret.
+          </p>
+
+          <p>
+            We introduce Identity-Bound Witness Extractable Signatures (IWES), a novel primitive that allows a Sender to issue a pre-signature locked to a specific Receiver. To complete the signature, the Receiver must inject a witness explicitly bound to its public identity. This completed signature publicly reveals the witness, attributing the final action to the Receiver while allowing the witness to serve as a cryptographic key.
+          </p>
+
+          <p>
+            We demonstrate the utility of IWES by applying it to Ethereum’s enshrined Proposer-Builder Separation (ePBS), directly resolving the critical Payload Timeliness vulnerability. Currently, ePBS relies on a Payload Timeliness Committee to subjectively vote on whether a Builder revealed a payload after a Proposer committed to a block header. By integrating IWES, the Proposer’s pre-signature is locked to the winning Builder. To finalize the consensus signature, the Builder must release a witness that is itself the payload decryption key. This aligns economic incentives so that a rational Builder gains nothing by withholding the payload. Consequently, payload availability becomes an objective, slashable property of the block signature, eliminating the need for a dedicated committee.
+          </p>
+
+          <p>
+            Finally, we provide a construction of IWES based on the hardness of the Module-LWE and Module-SIS assumptions, and validate it through a portable C implementation. Our benchmarks demonstrate that the construction produces post-quantum signatures of approximately 22 KB and the overhead on the entire ePBS pipeline is under 11 ms, comfortably within Ethereum’s slot and bandwidth constraints.
           </p>
         </details>
       </article>
